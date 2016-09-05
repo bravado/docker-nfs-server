@@ -4,7 +4,7 @@ set -e
 
 mounts="${@}"
 
-cat /dev/null > /etc/exports
+echo "#NFS Exports" > /etc/exports
 
 for mnt in "${mounts[@]}"; do
   src=$(echo $mnt | awk -F':' '{ print $1 }')
