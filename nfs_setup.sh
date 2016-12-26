@@ -4,6 +4,8 @@ set -e
 
 mounts="${@}"
 
+cat /dev/null > /etc/exports
+
 for mnt in "${mounts[@]}"; do
   src=$(echo $mnt | awk -F':' '{ print $1 }')
   mkdir -p $src
